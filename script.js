@@ -89,8 +89,19 @@
         hoveredButtonIndex = 0;
     }
 
+    function updateBackground(image, color) {
+        document.body.style.backgroundImage = image;
+        document.body.style.backgroundColor = color;
+    }
+
 
     let currentScreenId = activeScreenElement.id;
+    
+    function goTitle() { 
+        stopSoundtrack();
+        toggleScreen(currentScreenId, 'title-screen');
+        updateBackground("url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Backgrounds/Title%20Screen%20Background.png')");
+    }
     
     function goMainMenu() { 
         startSoundtrack('main-menu-soundtrack'); 
@@ -113,14 +124,10 @@
         toggleScreen(currentScreenId, 'options-controls-screen');
     }
 
-    function goTitle() { 
-        stopSoundtrack(); 
-        toggleScreen(currentScreenId, 'title-screen');
-    }
-
     function goGame() {
         startSoundtrack('tavern-theme-soundtrack');
-        toggleScreen(currentScreenId, 'game-screen');
+        toggleScreen(currentScreenId, 'game-screen-1');
+        updateBackground("none", "#000000");
     }
 
     function goEnd() { 
@@ -131,7 +138,10 @@
 
     titleButtonElement.addEventListener('click', () => 
     {
-        goMainMenu();
+    
+    // A função correta é goMainMenu, porém é alterada para facilitar o processo de criação
+    
+        goGame();
     });
 
 

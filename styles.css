@@ -1,17 +1,28 @@
 @font-face {
-    font-family: "diploma";
-    src: url("https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/diploma.ttf") format("truetype");
+    font-family: 'diploma';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/diploma.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: "livingstone";
-    src: url("https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/livingstone.ttf") format("truetype");
+    font-family: 'livingstone';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/livingstone.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'endor';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/endor.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'endor_alt';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/endor_alt.ttf') format('truetype');
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-image: url("https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Backgrounds/Title%20Screen%20Background.png");
+    background-image: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Backgrounds/Title%20Screen%20Background.png');
+    background-color: #000000;
     background-position: center;
     background-size: auto;
     background-repeat: repeat;
@@ -26,7 +37,7 @@ body {
 .info-text {
     padding: 0.625rem 1.25rem;
     font-size: 1.5rem;
-    font-family: "livingstone";
+    font-family: 'livingstone';
     background-color: #ff6d6d;
     color: #110000;
     border: none;
@@ -50,7 +61,7 @@ body {
 }
 
 #title-screen-header {
-    font-family: "diploma";
+    font-family: 'diploma';
     font-size: 16rem;
     margin: auto auto -2rem auto;
     color: #880000;
@@ -61,7 +72,7 @@ body {
 .container {
     padding: 0.625rem 1.25rem;
     font-size: 2rem;
-    font-family: "livingstone";
+    font-family: 'livingstone';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -73,7 +84,7 @@ body {
     outline: #880000 solid 0.3125rem;
 }
 
-input[type="range"] {
+input[type='range'] {
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
@@ -81,14 +92,14 @@ input[type="range"] {
     width: 15rem;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
     background: #666666;
     height: 0.5rem;
     width: 10rem;
     border-radius: 0.5rem;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     margin-top: -0.5rem;
@@ -98,11 +109,11 @@ input[type="range"]::-webkit-slider-thumb {
     border-radius: 0.5rem;
 }
 
-input[type="range"]:focus {
+input[type='range']:focus {
     outline: none;
 }
 
-input[type="range"]:focus::-webkit-slider-thumb {
+input[type='range']:focus::-webkit-slider-thumb {
     outline: 0.3125rem solid #880000;
   }
 
@@ -117,7 +128,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 button {
     padding: 0.625rem 1.25rem;
     font-size: 2rem;
-    font-family: "livingstone";
+    font-family: 'livingstone';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -164,23 +175,23 @@ button:hover,
         outline: #880000 solid 0.125rem;
     }
     
-    input[type="range"] {
+    input[type='range'] {
         width: 6rem;
     }
 
-    input[type="range"]::-webkit-slider-runnable-track {
+    input[type='range']::-webkit-slider-runnable-track {
         height: 0.2rem;
         width: 4rem;
         border-radius: 0.2rem;
     }
     
-    input[type="range"]::-webkit-slider-thumb {
+    input[type='range']::-webkit-slider-thumb {
         margin-top: -0.2rem;
         height: 0.6rem;
         width: 0.2rem;
         border-radius: 0.2rem;
     }
-    input[type="range"]:focus::-webkit-slider-thumb {
+    input[type='range']:focus::-webkit-slider-thumb {
         outline: 0.125rem solid #7a3799;
       }
     
