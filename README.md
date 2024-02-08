@@ -1,4 +1,4 @@
-﻿# O-Legado-do-Ferreiro
+﻿# O Legado do Ferreiro
 
  
 Em "O Legado do Ferreiro", os jogadores assumem o papel de Hermann Stahlhart, um ferreiro outrora renomado que, cansado da monotonia de sua vida pós-aposentadoria, decide embarcar em uma jornada épica em busca de mudança e aventura.
