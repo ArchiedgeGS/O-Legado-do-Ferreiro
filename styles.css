@@ -14,8 +14,8 @@
 }
 
 @font-face {
-    font-family: 'endor_alt';
-    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/endor_alt.ttf') format('truetype');
+    font-family: 'blockstepped';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/blockstepped.ttf') format('truetype');
 }
 
 body {
@@ -36,8 +36,8 @@ body {
 
 .info-text {
     padding: 0.625rem 1.25rem;
-    font-size: 1.5rem;
-    font-family: 'livingstone';
+    font-size: 3rem;
+    font-family: 'blockstepped';
     background-color: #ff6d6d;
     color: #110000;
     border: none;
@@ -71,8 +71,8 @@ body {
 
 .container {
     padding: 0.625rem 1.25rem;
-    font-size: 2rem;
-    font-family: 'livingstone';
+    font-size: 3rem;
+    font-family: 'blockstepped';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -127,8 +127,8 @@ input[type='range']:focus::-webkit-slider-thumb {
 
 button {
     padding: 0.625rem 1.25rem;
-    font-size: 2rem;
-    font-family: 'livingstone';
+    font-size: 3rem;
+    font-family: 'blockstepped';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -147,7 +147,7 @@ button:hover,
 }
 
 .options-controls-screen-button {
-    font-size: 1rem;
+    font-size: 2rem;
     margin: 1rem auto auto auto;
 }
 

@@ -141,7 +141,7 @@
     
     // A função correta é goMainMenu, porém é alterada para facilitar o processo de criação
     
-        goGame();
+        goMainMenu();
     });
 
 
