@@ -9,13 +9,8 @@
 }
 
 @font-face {
-    font-family: 'endor';
-    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/endor.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'blockstepped';
-    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/blockstepped.ttf') format('truetype');
+    font-family: 'princevaliant';
+    src: url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Fonts/princevaliant.ttf') format('truetype');
 }
 
 body {
@@ -36,8 +31,8 @@ body {
 
 .info-text {
     padding: 0.625rem 1.25rem;
-    font-size: 3rem;
-    font-family: 'blockstepped';
+    font-size: 2rem;
+    font-family: 'livingstone';
     background-color: #ff6d6d;
     color: #110000;
     border: none;
@@ -71,8 +66,8 @@ body {
 
 .container {
     padding: 0.625rem 1.25rem;
-    font-size: 3rem;
-    font-family: 'blockstepped';
+    font-size: 2rem;
+    font-family: 'livingstone';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -82,6 +77,11 @@ body {
     margin: 0 auto 1rem auto;
     box-shadow: black 0.625rem 0.625rem 0.1875rem;
     outline: #880000 solid 0.3125rem;
+}
+
+.game-container {
+    width: fit-content;
+    font-family: 'princevaliant';
 }
 
 input[type='range'] {
@@ -127,8 +127,8 @@ input[type='range']:focus::-webkit-slider-thumb {
 
 button {
     padding: 0.625rem 1.25rem;
-    font-size: 3rem;
-    font-family: 'blockstepped';
+    font-size: 2rem;
+    font-family: 'livingstone';
     background-color: #110000;
     color: #ff6d6d;
     border: none;
@@ -147,7 +147,7 @@ button:hover,
 }
 
 .options-controls-screen-button {
-    font-size: 2rem;
+    font-size: 1rem;
     margin: 1rem auto auto auto;
 }
 
