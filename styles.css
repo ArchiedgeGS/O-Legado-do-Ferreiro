@@ -81,7 +81,17 @@ body {
 
 .game-container {
     width: fit-content;
+    text-align: justify;
+    font-size: 1.5rem;
     font-family: 'princevaliant';
+    text-indent: 2rem;
+    background-color: #000000;
+    color: #ff6d6d;
+    outline: none;
+}
+
+.header-game-text {
+    text-align: center;
 }
 
 input[type='range'] {
