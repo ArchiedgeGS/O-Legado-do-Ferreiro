@@ -97,48 +97,59 @@
 
     let currentScreenId = activeScreenElement.id;
     
-    function goTitle() { 
-        stopSoundtrack();
-        toggleScreen(currentScreenId, 'title-screen');
-        updateBackground("url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Backgrounds/Title%20Screen%20Background.png')");
-    }
-    
-    function goMainMenu() { 
-        startSoundtrack('main-menu-soundtrack'); 
-        toggleScreen(currentScreenId, 'main-menu-screen');
-    }    
-        
-    function goLoadGame() { 
-        toggleScreen(currentScreenId, 'loadgame-screen');
+    const screens = {
+        'title-screen': {
+            soundtrack: null,
+            background: "url('https://raw.githubusercontent.com/archiedgegs/O-Legado-do-Ferreiro/main/Backgrounds/Title%20Screen%20Background.png')"
+        },
+        'main-menu-screen': {
+            soundtrack: 'main-menu-soundtrack',
+            background: null
+        },
+        'loadgame-screen': {
+            soundtrack: 'main-menu-soundtrack',
+            background: null
+        },
+        'options-screen': {
+            soundtrack: 'main-menu-soundtrack',
+            background: null
+        },
+        'options-audio-screen': {
+            soundtrack: 'main-menu-soundtrack',
+            background: null
+        },
+        'options-controls-screen': {
+            soundtrack: 'main-menu-soundtrack',
+            background: null
+        },
+        'game-screen-0': {
+            soundtrack: 'tavern-theme-soundtrack',
+            background: "none",
+        },
+        'game-screen-1': {
+            soundtrack: null,
+            background: "none",
+            color: '#000000'
+        },
+        'end-screen': {
+            soundtrack: null,
+            background: null
+        }
     }
 
-    function goOptions() { 
-        toggleScreen(currentScreenId, 'options-screen');
+    function goToScreen(newScreenId) {
+        const newScreen = screens[newScreenId];
+
+        startSoundtrack(newScreen.soundtrack)
+
+        if(newScreen.background) {
+            const backgroundColor = newScreen.color || '#000000';
+            updateBackground(newScreen.background, newScreen.color)
+        }
+
+        toggleScreen(currentScreenId, newScreenId);
     }
 
-    function goAudioOptions() { 
-        toggleScreen(currentScreenId, 'options-audio-screen');
-    }
-
-    function goControlsOptions() { 
-        toggleScreen(currentScreenId, 'options-controls-screen');
-    }
-
-    function goIntro() {
-        startSoundtrack('tavern-theme-soundtrack');
-        updateBackground("none", "#000000");
-        toggleScreen(currentScreenId, 'game-screen-0');
-    }
-
-    function goGame1() {
-        updateBackground("none", "#000000");
-        toggleScreen(currentScreenId, 'game-screen-1')
-    }
-
-    function goEnd() { 
-        toggleScreen(currentScreenId, 'end-screen');
-    }
-    
 
 
     titleButtonElement.addEventListener('click', () => 
@@ -146,45 +157,45 @@
     
     // A função correta é goMainMenu, porém é alterada para facilitar o processo de criação
     
-        // goMainMenu();
-        goGame1();
+        // goToScreen('main-menu-screen');
+        goToScreen('main-menu-screen');
     });
 
 
 
     playButtonElement.addEventListener('click', () => 
     {
-        goLoadGame();
+        goToScreen('loadgame-screen');
     });
     optionsButtonElement.addEventListener('click', () => 
     {
-        goOptions();
+        goToScreen('options-screen');
     });
     exitButtonElement.addEventListener('click', () => 
     {
-        goTitle();
+        goToScreen('title-screen');
     });
 
 
 
     optionsAudioButtonElement.addEventListener('click', () => 
     {
-        goAudioOptions();
+        goToScreen('options-audio-screen');
     });
 
     optionsControlsButtonElement.addEventListener('click', () => 
     {
-        goControlsOptions();
+        goToScreen('options-controls-screen');
     });
 
     backFromAudioOptionsButtonElement.addEventListener('click', () => 
     {
-        goOptions();
+        goToScreen('options-screen');
     });
 
     backFromControlsOptionsButtonElement.addEventListener('click', () => 
     {
-        goOptions();
+        goToScreen('options-screen');
     });
 
 
@@ -192,34 +203,34 @@
     newGameButtonElement.addEventListener('click', () => 
     {
         showElement('continue-button');
-        goIntro();
+        goToScreen('game-screen-0');
     });
     continueGameButtonElement.addEventListener('click', () => 
     {
-        goTitle();
+        goToScreen('title-screen');
     });
 
 
 
     backFromLoadGameButtonElement.addEventListener('click', () => 
     {
-        goMainMenu();
+        goToScreen('main-menu-screen');
     });
     backFromOptionsButtonElement.addEventListener('click', () => 
     {
-        goMainMenu();
+        goToScreen('main-menu-screen');
     });
 
 
 
     nextButtonElement.addEventListener('click', () => 
     {
-        goGame1();
+        goToScreen('game-screen-1');
     });
 
     endButtonElement.addEventListener('click', () => 
     {
-        goTitle();
+        goToScreen('title-screen');
     });
 
 
@@ -273,14 +284,18 @@
     };
 
     function startSoundtrack (newSoundtrackId) {
-        if(newSoundtrackId !== currentSoundtrackId) {
-            currentSoundtrackElement.pause();
-            currentSoundtrackElement.currentTime = 0;
-            changeMusic(newSoundtrackId);
-            currentSoundtrackElement.play();
+        if(newSoundtrackId) {
+            if(newSoundtrackId !== currentSoundtrackId) {
+                stopSoundtrack();
+                changeMusic(newSoundtrackId);
+                currentSoundtrackElement.play();
+            }
+            else {
+                currentSoundtrackElement.play();
+            }
         }
         else {
-            currentSoundtrackElement.play();
+            stopSoundtrack();
         }
     }
     
