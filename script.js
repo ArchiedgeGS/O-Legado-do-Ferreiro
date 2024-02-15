@@ -124,10 +124,15 @@
         toggleScreen(currentScreenId, 'options-controls-screen');
     }
 
-    function goGame() {
+    function goIntro() {
         startSoundtrack('tavern-theme-soundtrack');
-        toggleScreen(currentScreenId, 'game-screen-1');
         updateBackground("none", "#000000");
+        toggleScreen(currentScreenId, 'game-screen-0');
+    }
+
+    function goGame1() {
+        updateBackground("none", "#000000");
+        toggleScreen(currentScreenId, 'game-screen-1')
     }
 
     function goEnd() { 
@@ -142,7 +147,7 @@
     // A função correta é goMainMenu, porém é alterada para facilitar o processo de criação
     
         // goMainMenu();
-        goGame();
+        goGame1();
     });
 
 
@@ -187,7 +192,7 @@
     newGameButtonElement.addEventListener('click', () => 
     {
         showElement('continue-button');
-        goGame();
+        goIntro();
     });
     continueGameButtonElement.addEventListener('click', () => 
     {
@@ -209,7 +214,7 @@
 
     nextButtonElement.addEventListener('click', () => 
     {
-        goEnd();
+        goGame1();
     });
 
     endButtonElement.addEventListener('click', () => 

@@ -168,62 +168,33 @@ button:hover,
     height: fit-content;
 }
 
-@media (max-width: 768px) {
-    #title-screen-header {
-        font-size: 6.4rem;
-        margin: auto auto 1.2rem auto;
-        text-shadow: black 0.25rem 0.25rem 0.125rem;
-        -webkit-text-stroke: 0.0025rem #110000;
-    }
+.player {
+    background-color: #ff6600;
+}
 
-    #music-volume-slider-container, #sfx-volume-slider-container {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.8rem;
-        width: 6.4rem;
-        margin: 0.4rem auto;
-        box-shadow: black 0.25rem 0.25rem 0.075rem;
-        outline: #880000 solid 0.125rem;
-    }
-    
-    input[type='range'] {
-        width: 6rem;
-    }
+#game-board {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(40, 10px);
+    grid-template-rows: repeat(40, 10px);
+    gap: 1px;
+    margin: 5px;
+    border: #880000 solid 10px;
+    background-color: #ffffff;
+    position: relative;
+}
 
-    input[type='range']::-webkit-slider-runnable-track {
-        height: 0.2rem;
-        width: 4rem;
-        border-radius: 0.2rem;
-    }
-    
-    input[type='range']::-webkit-slider-thumb {
-        margin-top: -0.2rem;
-        height: 0.6rem;
-        width: 0.2rem;
-        border-radius: 0.2rem;
-    }
-    input[type='range']:focus::-webkit-slider-thumb {
-        outline: 0.125rem solid #7a3799;
-      }
-    
-    .back {
-        margin-top: 1.2rem;;
-    }
-    
-    .info-text {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.6rem;
-        width: 6.4rem;
-        margin: 0 auto 1.2rem auto;
-        box-shadow: black 0.25rem 0.25rem 0.075rem;
-        outline: #880000 solid 0.125rem;
-    }
-    
-    button {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.8rem;
-        width: 6.4rem;
-        margin: 0 auto 0.4rem auto;
-        box-shadow: black 0.25rem 0.25rem 0.075rem;
-        outline: #880000 solid 0.125rem;
-    }
+#game-board::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        linear-gradient(black 1px, transparent 0),
+        linear-gradient(to right, black 1px, transparent 0),
+        linear-gradient(to bottom, black 1px, transparent 0);
+    background-size: 11px 11px; /* Tamanho da divisão da grade mais a largura da divisória */
+    z-index: -1;
 }
