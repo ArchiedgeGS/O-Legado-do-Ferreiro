@@ -172,7 +172,7 @@ button:hover,
     background-color: #ff6600;
 }
 
-#game-board {
+.game-board {
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(40, 10px);
@@ -182,19 +182,4 @@ button:hover,
     border: #880000 solid 10px;
     background-color: #ffffff;
     position: relative;
-}
-
-#game-board::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        linear-gradient(black 1px, transparent 0),
-        linear-gradient(to right, black 1px, transparent 0),
-        linear-gradient(to bottom, black 1px, transparent 0);
-    background-size: 11px 11px; /* Tamanho da divisão da grade mais a largura da divisória */
-    z-index: -1;
 }
