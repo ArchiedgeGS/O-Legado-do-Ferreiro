@@ -123,7 +123,7 @@
             background: null
         },
         'game-screen-0': {
-            soundtrack: 'tavern-theme-soundtrack',
+            soundtrack: 'campfire-soundtrack',
             background: "none",
         },
         'game-screen-1': {
