@@ -262,11 +262,15 @@
         },
     ];
 
+
+
     let currentSoundtrackElement = document.getElementById('main-menu-soundtrack');
     let currentSoundtrackId = currentSoundtrackElement.id;
     musicVolumeSliderElement.value = savedMusicVolume * 100;
     musicVolumeDisplayElement.textContent = musicVolumeSliderElement.value;
     currentSoundtrackElement.volume = musicVolumeSliderElement.value / 100;
+
+
 
     if(!currentSoundtrackElement.paused) {
         currentSoundtrackElement.addEventListener('ended', () => 
@@ -276,9 +280,10 @@
         )
     }
 
+
+
     function changeMusic (soundtrackId) {
-        let currentSoundtrack = soundtracks.find(soundtrack => soundtrack.id === soundtrackId);
-        currentSoundtrackElement = currentSoundtrack.element;
+        currentSoundtrackElement = document.getElementById(soundtrackId);
         currentSoundtrackElement.volume = musicVolumeSliderElement.value / 100;
         currentSoundtrackId = soundtrackId;
     };
