@@ -168,18 +168,18 @@ button:hover,
     height: fit-content;
 }
 
-.player {
-    background-color: #ff6600;
-}
-
-.game-board {
+#game-board {
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(40, 10px);
     grid-template-rows: repeat(40, 10px);
     gap: 1px;
-    margin: 5px;
     border: #880000 solid 10px;
-    background-color: #ffffff;
+    background-color: #000000;
     position: relative;
+}
+
+.player {
+    background-color: #ff6600;
+    grid-area: 20 / 20 / 22 / 22;
 }

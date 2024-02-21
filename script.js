@@ -56,6 +56,11 @@
     let hoveredButtonIndex = 0;
 
 
+
+    let activeGameBoardElement = activeScreenElement.querySelector('.game-board') ? activeScreenElement.querySelector('.game-board') : -1;
+
+
+
     function hideElement(hideElementId) {
         const element = document.getElementById(hideElementId);
         if(element.classList.contains('screen')) {
@@ -84,6 +89,7 @@
 
     function updateScreen() {
         activeScreenElement = document.querySelector('.active');
+        activeGameBoardElement = activeScreenElement.querySelector('.game-board') ? activeScreenElement.querySelector('.game-board') : -1;
         currentScreenId = activeScreenElement.id;
         onScreenNavigableButtonElements = activeScreenElement.querySelectorAll('.navigable-button:not(.hidden)');
         hoveredButtonIndex = 0;
@@ -545,49 +551,59 @@
 
 
 
+// Manipulação do Jogo
+
+    let playerPosition =
+    {
+        x: 10,
+        y: 10,
+    };
+
+    
+
 // Save States
 
-if (localStorage) {
-    console.log(`
-    Observação:
-    
-        localStorage é suportado pelo seu Browser, seu progresso será salvo!
-    `);
-
-/*
-O formato para criar um item no armazenamento local é:
-localStorage.setItem('chave (pode ser qualquer nome que quiser)', JSON.stringify(valor que se deseja armazenar));
-
-Para usar esse item deve-se usar uma variável nova e inicializá-la com o valor igual a:
-JSON.parse(localStorage.getItem('chave'))
-
-Obs: JSON.stringify transforma um valor em string e JSON.parse transforma uma string em um valor de volta ao original
-*/
-    console.log(`
-    Os controles atuais são:
+    if (localStorage) {
+        console.log(`
+        Observação:
         
-        Mover para Cima: ${savedMoveUpKey}
-        
-        Mover para Baixo: ${savedMoveDownKey}
-        
-        Mover para Esquerda: ${savedMoveLeftKey}
-        
-        Mover para Direita: ${savedMoveRightKey}
-        
-        Selecionar: ${savedSelectKey !== ' ' ? savedSelectKey : 'Barra de Espaço'}
-        
-        Voltar: ${savedBackKey}
-    `)
+            localStorage é suportado pelo seu Browser, seu progresso será salvo!
+        `);
 
-    console.log(`
-    Os volumes atuais são:
+    /*
+    O formato para criar um item no armazenamento local é:
+    localStorage.setItem('chave (pode ser qualquer nome que quiser)', JSON.stringify(valor que se deseja armazenar));
 
-        Música: ${savedMusicVolume * 100}
+    Para usar esse item deve-se usar uma variável nova e inicializá-la com o valor igual a:
+    JSON.parse(localStorage.getItem('chave'))
 
-        Efeitos Sonoros: ${savedSfxVolume * 100}
-    `)
-}
-else {
-    console.log('Erro: localStorage NÃO é suportado pelo seu Browser, recarregar a página reiniciará seu progresso');
-    showElement('localStorage-compatibility-text');
-}
+    Obs: JSON.stringify transforma um valor em string e JSON.parse transforma uma string em um valor de volta ao original
+    */
+        console.log(`
+        Os controles atuais são:
+            
+            Mover para Cima: ${savedMoveUpKey}
+            
+            Mover para Baixo: ${savedMoveDownKey}
+            
+            Mover para Esquerda: ${savedMoveLeftKey}
+            
+            Mover para Direita: ${savedMoveRightKey}
+            
+            Selecionar: ${savedSelectKey !== ' ' ? savedSelectKey : 'Barra de Espaço'}
+            
+            Voltar: ${savedBackKey}
+        `)
+
+        console.log(`
+        Os volumes atuais são:
+
+            Música: ${savedMusicVolume * 100}
+
+            Efeitos Sonoros: ${savedSfxVolume * 100}
+        `)
+    }
+    else {
+        console.log('Erro: localStorage NÃO é suportado pelo seu Browser, recarregar a página reiniciará seu progresso');
+        showElement('localStorage-compatibility-text');
+    }
